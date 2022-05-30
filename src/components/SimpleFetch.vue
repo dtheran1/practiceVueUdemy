@@ -1,8 +1,8 @@
 <template>
   <h2>Simple Fetch</h2>
   <ul v-if="users">
-    <li v-for="user in users" :key="user">
-        {{user.name}}
+    <li v-for="user in users" :key="user.id">
+      {{ user.name }} - {{ user.email }}
     </li>
   </ul>
 </template>

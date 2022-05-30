@@ -1,5 +1,18 @@
 <template>
   <div class="home">
+    <ProfileWithProps />
+    <hr />
+
+    <Suspense>
+      <template #default>
+        <SuspenseFetch />
+      </template>
+      <template #fallback>
+        Por favor espere a que se cargue los datos...
+      </template>
+    </Suspense>
+
+    <hr />
     <SimpleFetch />
     <hr />
     <TodoList />
@@ -25,6 +38,8 @@ import WatchCounter from "@/components/WatchCounter.vue";
 import SimpleCounterCompositionApi from "@/components/SimpleCounterCompositionApi.vue";
 import TodoList from "@/components/TodoList";
 import SimpleFetch from "@/components/SimpleFetch.vue";
+import SuspenseFetch from "@/components/SuspenseFetch.vue";
+import ProfileWithProps from "@/components/ProfileWithProps.vue";
 
 export default {
   name: "Home",
@@ -36,6 +51,8 @@ export default {
     SimpleCounterCompositionApi,
     TodoList,
     SimpleFetch,
+    SuspenseFetch,
+    ProfileWithProps
   },
 };
 </script>
