@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ProfileWithProps />
+    <ProfileWithProps name="Daniel Theran" :age="31" />
     <hr />
 
     <Suspense>
