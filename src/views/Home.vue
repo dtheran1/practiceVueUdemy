@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <EmitEvent @notify="notifyFromChild" />
+    <hr />
+
     <ProfileWithProps name="Daniel Theran" :age="31" />
     <hr />
 
@@ -40,6 +43,7 @@ import TodoList from "@/components/TodoList";
 import SimpleFetch from "@/components/SimpleFetch.vue";
 import SuspenseFetch from "@/components/SuspenseFetch.vue";
 import ProfileWithProps from "@/components/ProfileWithProps.vue";
+import EmitEvent from "@/components/EmitEvents.vue";
 
 export default {
   name: "Home",
@@ -52,7 +56,14 @@ export default {
     TodoList,
     SimpleFetch,
     SuspenseFetch,
-    ProfileWithProps
+    ProfileWithProps,
+    EmitEvent,
+  },
+  setup() {
+    const notifyFromChild = (message) => {
+      console.log(message);
+    };
+    return { notifyFromChild };
   },
 };
 </script>
